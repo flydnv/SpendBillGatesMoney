@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+  font-family: Roboto, sans-serif, system-ui, -apple-system, Segoe UI, Ubuntu,
+    Cantarell, Noto Sans;
+}
+.simple-page {
+  background: #f1f2f6;
+}
+.title {
+  background: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+  padding: 30px 20px;
+  text-align: center;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.money-bar {
+  text-align: center;
+  padding: 20px;
+  background-color: #2ecc71;
+  background: linear-gradient(180deg, #2ecc71, #1abc9c);
+  font-size: 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  position: sticky;
+  margin: 10px 0;
+  text-align: center;
+  top: 0;
+  z-index: 99999;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 10px 10px;
+}
+.item-img {
+  display: block;
+  user-select: none;
+  height: 120px;
+  object-fit: contain;
+  max-width: 100%;
+  margin: 16px auto;
+}
+.item {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.item-cost {
+  color: #24c486;
+  font-size: 20px;
+}
+.item-controls {
+  display: grid;
+  font-size: 20px;
+  font-weight: 700;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+  margin-top: 25px;
+}
+
+.item-wrapper {
+  background-color: #fff;
+  text-align: center;
+  align-content: center;
+  font-size: 18px;
+  max-width: 100%;
+  width: 100%;
+  padding: 20px 15px;
+}
+.item-input {
+  border: 1px solid #b2bec3;
+  border-radius: 3px;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+}
+/* .item-sell {
+  background: linear-gradient(180deg, #f53b82, #f53b57);
+} */
+.item-sell {
+  border-radius: 3px;
+  border: none;
+  background-color: #f1f2f6;
+}
+.item-buy {
+  background: linear-gradient(180deg, #2ecc71, #1abc9c);
+  border: none;
+  border-radius: 3px;
+}
+
+.item-input::-webkit-inner-spin-button,
+.item-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
