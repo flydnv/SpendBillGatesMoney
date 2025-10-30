@@ -20,6 +20,16 @@
   padding: 30px 20px;
   text-align: center;
 }
+.header-img {
+  border-radius: 125px;
+  display: block;
+  height: 125px;
+  margin: 10px auto 25px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: 125px;
+}
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -98,15 +108,21 @@
   border-radius: 3px;
   border: none;
   background-color: #f1f2f6;
+  cursor: pointer;
 }
 .item-buy {
   background: linear-gradient(180deg, #2ecc71, #1abc9c);
   border: none;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .item-input::-webkit-inner-spin-button,
 .item-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+button:disabled {
+  filter: grayscale(100%);
+  cursor: not-allowed;
 }
