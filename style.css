@@ -126,3 +126,64 @@ button:disabled {
   filter: grayscale(100%);
   cursor: not-allowed;
 }
+
+.spree-wrapper {
+  font-size: 18px;
+  margin-top: 10px;
+  max-width: 100%;
+  padding: 15px 15px 30px;
+}
+
+.spree-headline,
+.spree-wrapper {
+  background-color: #fff;
+  text-align: center;
+}
+
+.spree-headline {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 15px 15px 25px;
+}
+
+.spree-items {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 290px;
+  text-align: center;
+  grid-gap: 10px 0;
+  font-size: 18px;
+  grid-template-columns: 170px 45px 75px;
+}
+
+.spree-item-name {
+  text-align: left;
+  text-overflow: ellipsis;
+}
+
+.spree-item-amount {
+  text-align: left;
+}
+
+.spree-item-cost {
+  font-weight: 700;
+}
+
+.spree-item-cost,
+.spree-total-money {
+  color: #24c486;
+  text-align: right;
+}
+
+.spree-total {
+  border-top: 1px solid #333;
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 300px;
+  padding-top: 10px;
+}

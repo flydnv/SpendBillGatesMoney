@@ -9,6 +9,9 @@
 // })
 const items = document.querySelector(".items");
 const moneyBar = document.querySelector(".money-bar");
+const parent = document.querySelector(".money-bar").parentNode;
+const spree_wrapper = document.createElement("div");
+spree_wrapper.classList.add("spree-wrapper");
 const products = [
   {
     id: 1,
@@ -322,6 +325,39 @@ const sellProduct = (id) => {
   showProducts();
 };
 
+const showExpenses = () => {
+  spree_wrapper.textContent = "";
+  const spree_headline = document.createElement("div");
+  spree_headline.classList.add("spree-headline");
+  spree_headline.textContent = "Your Receipt";
+  spree_wrapper.append(spree_headline);
+  basket.forEach((a) => {
+    let prod = products.find((prod) => prod.id === a.id);
+    const spree_items = document.createElement("div");
+    spree_items.classList.add("spree-items");
+    const spree_item_name = document.createElement("div");
+    spree_item_name.classList.add("spree-item-name");
+    spree_item_name.textContent = prod.name;
+    const spree_item_amount = document.createElement("div");
+    spree_item_amount.classList.add("spree-item-amount");
+    spree_item_amount.textContent = `x${a.count}`;
+    const spree_item_cost = document.createElement("div");
+    spree_item_cost.classList.add("spree-item-cost");
+    spree_item_cost.textContent = `$${prod.price * a.count}`;
+    spree_items.append(spree_item_name, spree_item_amount, spree_item_cost);
+    spree_wrapper.append(spree_items);
+    parent.append(spree_wrapper);
+  });
+  const spree_total = document.createElement("div");
+  spree_total.classList.add("spree-total");
+  const span = document.createElement("span");
+  span.textContent = "TOTAL";
+  const spree_total_money = document.createElement("div");
+  spree_total_money.classList.add("spree-total-money");
+  spree_total_money.textContent = total;
+  spree_total.append(span, spree_total_money);
+  spree_wrapper.append(spree_total);
+};
 const showProducts = () => {
   calculateTotal();
   items.textContent = "";
@@ -373,5 +409,6 @@ const showProducts = () => {
     item.append(item_wrapper);
     items.append(item);
   });
+  showExpenses();
 };
 showProducts();
