@@ -361,7 +361,7 @@ const showExpenses = () => {
 const showProducts = () => {
   calculateTotal();
   items.textContent = "";
-  products.forEach((product) => {
+  products.forEach((product, key) => {
     const productInBasket = basket.find((a) => a.id === product.id);
     const item = document.createElement("div");
     item.classList.add("item");
@@ -404,8 +404,17 @@ const showProducts = () => {
     item_input.readOnly = true;
     // item_input.pattern = "d*";
 
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("deleteButton");
+    deleteButton.addEventListener("click", () => {
+      products.splice(key, 1);
+      basket = basket.filter((a) => a.id !== product.id);
+      showProducts();
+    });
+
     item_wrapper.append(item_img, item_name, item_price, item_controls);
-    item_controls.append(sell_button, item_input, buy_button);
+    item_controls.append(sell_button, item_input, buy_button, deleteButton);
     item.append(item_wrapper);
     items.append(item);
   });
