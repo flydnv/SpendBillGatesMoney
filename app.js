@@ -285,7 +285,7 @@ let products = [
     name: "NBA Team",
   },
 ];
-const tempProducts = products;
+let tempProducts = [...products];
 let basket = [];
 const balance = 100000000000;
 let total = 0;
@@ -417,7 +417,8 @@ const showProducts = () => {
     deleteButton.textContent = "Delete";
     deleteButton.classList.add("deleteButton");
     deleteButton.addEventListener("click", () => {
-      products.splice(key, 1);
+      products = products.filter((a) => a.id !== product.id);
+      tempProducts = tempProducts.filter((a) => a.id !== product.id);
       basket = basket.filter((a) => a.id !== product.id);
       showProducts();
     });
