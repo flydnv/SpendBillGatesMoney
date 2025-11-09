@@ -11,8 +11,9 @@ const items = document.querySelector(".items");
 const moneyBar = document.querySelector(".money-bar");
 const parent = document.querySelector(".money-bar").parentNode;
 const spree_wrapper = document.createElement("div");
+const searhInput = document.querySelector("#searchInput");
 spree_wrapper.classList.add("spree-wrapper");
-const products = [
+let products = [
   {
     id: 1,
     image: "https://neal.fun/spend/images/big-mac.jpg",
@@ -284,9 +285,17 @@ const products = [
     name: "NBA Team",
   },
 ];
+const tempProducts = products;
 let basket = [];
 const balance = 100000000000;
 let total = 0;
+searhInput.addEventListener("input", () => {
+  let value = searhInput.value;
+  products = tempProducts.filter((a) =>
+    a.name.toLowerCase().startsWith(value.toLowerCase())
+  );
+  showProducts();
+});
 const calculateTotal = () => {
   total = basket.reduce(
     (acc, item) =>
