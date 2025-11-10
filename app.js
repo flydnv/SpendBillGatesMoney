@@ -13,280 +13,287 @@ const parent = document.querySelector(".money-bar").parentNode;
 const spree_wrapper = document.createElement("div");
 const searhInput = document.querySelector("#searchInput");
 spree_wrapper.classList.add("spree-wrapper");
-let products = [
-  {
-    id: 1,
-    image: "https://neal.fun/spend/images/big-mac.jpg",
-    price: 2,
-    name: "Big Mac",
-  },
-  {
-    id: 2,
-    image: "https://neal.fun/spend/images/flip-flops.jpg",
-    price: 3,
-    name: "Flip Flops",
-  },
-  {
-    id: 3,
-    image: "https://neal.fun/spend/images/coca-cola-pack.jpg",
-    price: 5,
-    name: "Coca-Cola Pack",
-  },
-  {
-    id: 4,
-    image: "https://neal.fun/spend/images/movie-ticket.jpg",
-    price: 12,
-    name: "Movie Ticket",
-  },
-  {
-    id: 5,
-    image: "https://neal.fun/spend/images/book.jpg",
-    price: 15,
-    name: "Book",
-  },
-  {
-    id: 6,
-    image: "https://neal.fun/spend/images/lobster-dinner.jpg",
-    price: 45,
-    name: "Lobster Dinner",
-  },
-  {
-    id: 7,
-    image: "https://neal.fun/spend/images/video-game.jpg",
-    price: 60,
-    name: "Video Game",
-  },
-  {
-    id: 8,
-    image: "https://neal.fun/spend/images/amazon-echo.jpg",
-    price: 99,
-    name: "Amazon Echo",
-  },
-  {
-    id: 9,
-    image: "https://neal.fun/spend/images/year-of-netflix.jpg",
-    price: 100,
-    name: "Year of Netflix",
-  },
-  {
-    id: 10,
-    image: "https://neal.fun/spend/images/air-jordans.jpg",
-    price: 125,
-    name: "Air Jordans",
-  },
-  {
-    id: 11,
-    image: "https://neal.fun/spend/images/airpods.jpg",
-    price: 199,
-    name: "Airpods",
-  },
-  {
-    id: 12,
-    image: "https://neal.fun/spend/images/gaming-console.jpg",
-    price: 299,
-    name: "Gaming Console",
-  },
-  {
-    id: 13,
-    image: "https://neal.fun/spend/images/drone.jpg",
-    price: 350,
-    name: "Drone",
-  },
-  {
-    id: 14,
-    image: "https://neal.fun/spend/images/smartphone.jpg",
-    price: 699,
-    name: "Smartphone",
-  },
-  {
-    id: 15,
-    image: "https://neal.fun/spend/images/bike.jpg",
-    price: 800,
-    name: "Bike",
-  },
-  {
-    id: 16,
-    image: "https://neal.fun/spend/images/kitten.jpg",
-    price: 1500,
-    name: "Kitten",
-  },
-  {
-    id: 17,
-    image: "https://neal.fun/spend/images/puppy.jpg",
-    price: 1500,
-    name: "Puppy",
-  },
-  {
-    id: 18,
-    image: "https://neal.fun/spend/images/auto-rickshaw.jpg",
-    price: 2300,
-    name: "Auto Rickshaw",
-  },
-  {
-    id: 19,
-    image: "https://neal.fun/spend/images/horse.jpg",
-    price: 2500,
-    name: "Horse",
-  },
-  {
-    id: 20,
-    image: "https://neal.fun/spend/images/acre-of-farmland.jpg",
-    price: 3000,
-    name: "Acre of Farmland",
-  },
-  {
-    id: 21,
-    image: "https://neal.fun/spend/images/designer-handbag.jpg",
-    price: 5500,
-    name: "Designer Handbag",
-  },
-  {
-    id: 22,
-    image: "https://neal.fun/spend/images/hot-tub.jpg",
-    price: 6000,
-    name: "Hot Tub",
-  },
-  {
-    id: 23,
-    image: "https://neal.fun/spend/images/luxury-wine.jpg",
-    price: 7000,
-    name: "Luxury Wine",
-  },
-  {
-    id: 24,
-    image: "https://neal.fun/spend/images/diamond-ring.jpg",
-    price: 10000,
-    name: "Diamond Ring",
-  },
-  {
-    id: 25,
-    image: "https://neal.fun/spend/images/jet-ski.jpg",
-    price: 12000,
-    name: "Jet Ski",
-  },
-  {
-    id: 26,
-    image: "https://neal.fun/spend/images/rolex.jpg",
-    price: 15000,
-    name: "Rolex",
-  },
-  {
-    id: 27,
-    image: "https://neal.fun/spend/images/ford-f-150.jpg",
-    price: 30000,
-    name: "Ford F-150",
-  },
-  {
-    id: 28,
-    image: "https://neal.fun/spend/images/tesla.jpg",
-    price: 75000,
-    name: "Tesla",
-  },
-  {
-    id: 29,
-    image: "https://neal.fun/spend/images/monster-truck.jpg",
-    price: 150000,
-    name: "Monster Truck",
-  },
-  {
-    id: 30,
-    image: "https://neal.fun/spend/images/ferrari.jpg",
-    price: 250000,
-    name: "Ferrari",
-  },
-  {
-    id: 31,
-    image: "https://neal.fun/spend/images/single-family-home.jpg",
-    price: 300000,
-    name: "Single Family Home",
-  },
-  {
-    id: 32,
-    image: "https://neal.fun/spend/images/gold-bar.jpg",
-    price: 700000,
-    name: "Gold Bar",
-  },
-  {
-    id: 33,
-    image: "https://neal.fun/spend/images/mcdonalds-franchise.jpg",
-    price: 1500000,
-    name: "McDonalds Franchise",
-  },
-  {
-    id: 34,
-    image: "https://neal.fun/spend/images/superbowl-ad.jpg",
-    price: 5250000,
-    name: "Superbowl Ad",
-  },
-  {
-    id: 35,
-    image: "https://neal.fun/spend/images/yacht.jpg",
-    price: 7500000,
-    name: "Yacht",
-  },
-  {
-    id: 36,
-    image: "https://neal.fun/spend/images/m1-abrams.jpg",
-    price: 8000000,
-    name: "M1 Abrams",
-  },
-  {
-    id: 37,
-    image: "https://neal.fun/spend/images/formula-1-car.jpg",
-    price: 15000000,
-    name: "Formula 1 Car",
-  },
-  {
-    id: 38,
-    image: "https://neal.fun/spend/images/apache-helicopter.jpg",
-    price: 31000000,
-    name: "Apache Helicopter",
-  },
-  {
-    id: 39,
-    image: "https://neal.fun/spend/images/mansion.jpg",
-    price: 45000000,
-    name: "Mansion",
-  },
-  {
-    id: 40,
-    image: "https://neal.fun/spend/images/make-a-movie.jpg",
-    price: 100000000,
-    name: "Make a Movie",
-  },
-  {
-    id: 41,
-    image: "https://neal.fun/spend/images/boeing-747.jpg",
-    price: 148000000,
-    name: "Boeing 747",
-  },
-  {
-    id: 42,
-    image: "https://neal.fun/spend/images/mona-lisa.jpg",
-    price: 780000000,
-    name: "Mona Lisa",
-  },
-  {
-    id: 43,
-    image: "https://neal.fun/spend/images/skyscraper.jpg",
-    price: 850000000,
-    name: "Skyscraper",
-  },
-  {
-    id: 44,
-    image: "https://neal.fun/spend/images/cruise-ship.jpg",
-    price: 930000000,
-    name: "Cruise Ship",
-  },
-  {
-    id: 45,
-    image: "https://neal.fun/spend/images/nba-team.jpg",
-    price: 2120000000,
-    name: "NBA Team",
-  },
-];
-let tempProducts = [...products];
-let basket = [];
+if (!localStorage.getItem("products")) {
+  let products = [
+    {
+      id: 1,
+      image: "https://neal.fun/spend/images/big-mac.jpg",
+      price: 2,
+      name: "Big Mac",
+    },
+    {
+      id: 2,
+      image: "https://neal.fun/spend/images/flip-flops.jpg",
+      price: 3,
+      name: "Flip Flops",
+    },
+    {
+      id: 3,
+      image: "https://neal.fun/spend/images/coca-cola-pack.jpg",
+      price: 5,
+      name: "Coca-Cola Pack",
+    },
+    {
+      id: 4,
+      image: "https://neal.fun/spend/images/movie-ticket.jpg",
+      price: 12,
+      name: "Movie Ticket",
+    },
+    {
+      id: 5,
+      image: "https://neal.fun/spend/images/book.jpg",
+      price: 15,
+      name: "Book",
+    },
+    {
+      id: 6,
+      image: "https://neal.fun/spend/images/lobster-dinner.jpg",
+      price: 45,
+      name: "Lobster Dinner",
+    },
+    {
+      id: 7,
+      image: "https://neal.fun/spend/images/video-game.jpg",
+      price: 60,
+      name: "Video Game",
+    },
+    {
+      id: 8,
+      image: "https://neal.fun/spend/images/amazon-echo.jpg",
+      price: 99,
+      name: "Amazon Echo",
+    },
+    {
+      id: 9,
+      image: "https://neal.fun/spend/images/year-of-netflix.jpg",
+      price: 100,
+      name: "Year of Netflix",
+    },
+    {
+      id: 10,
+      image: "https://neal.fun/spend/images/air-jordans.jpg",
+      price: 125,
+      name: "Air Jordans",
+    },
+    {
+      id: 11,
+      image: "https://neal.fun/spend/images/airpods.jpg",
+      price: 199,
+      name: "Airpods",
+    },
+    {
+      id: 12,
+      image: "https://neal.fun/spend/images/gaming-console.jpg",
+      price: 299,
+      name: "Gaming Console",
+    },
+    {
+      id: 13,
+      image: "https://neal.fun/spend/images/drone.jpg",
+      price: 350,
+      name: "Drone",
+    },
+    {
+      id: 14,
+      image: "https://neal.fun/spend/images/smartphone.jpg",
+      price: 699,
+      name: "Smartphone",
+    },
+    {
+      id: 15,
+      image: "https://neal.fun/spend/images/bike.jpg",
+      price: 800,
+      name: "Bike",
+    },
+    {
+      id: 16,
+      image: "https://neal.fun/spend/images/kitten.jpg",
+      price: 1500,
+      name: "Kitten",
+    },
+    {
+      id: 17,
+      image: "https://neal.fun/spend/images/puppy.jpg",
+      price: 1500,
+      name: "Puppy",
+    },
+    {
+      id: 18,
+      image: "https://neal.fun/spend/images/auto-rickshaw.jpg",
+      price: 2300,
+      name: "Auto Rickshaw",
+    },
+    {
+      id: 19,
+      image: "https://neal.fun/spend/images/horse.jpg",
+      price: 2500,
+      name: "Horse",
+    },
+    {
+      id: 20,
+      image: "https://neal.fun/spend/images/acre-of-farmland.jpg",
+      price: 3000,
+      name: "Acre of Farmland",
+    },
+    {
+      id: 21,
+      image: "https://neal.fun/spend/images/designer-handbag.jpg",
+      price: 5500,
+      name: "Designer Handbag",
+    },
+    {
+      id: 22,
+      image: "https://neal.fun/spend/images/hot-tub.jpg",
+      price: 6000,
+      name: "Hot Tub",
+    },
+    {
+      id: 23,
+      image: "https://neal.fun/spend/images/luxury-wine.jpg",
+      price: 7000,
+      name: "Luxury Wine",
+    },
+    {
+      id: 24,
+      image: "https://neal.fun/spend/images/diamond-ring.jpg",
+      price: 10000,
+      name: "Diamond Ring",
+    },
+    {
+      id: 25,
+      image: "https://neal.fun/spend/images/jet-ski.jpg",
+      price: 12000,
+      name: "Jet Ski",
+    },
+    {
+      id: 26,
+      image: "https://neal.fun/spend/images/rolex.jpg",
+      price: 15000,
+      name: "Rolex",
+    },
+    {
+      id: 27,
+      image: "https://neal.fun/spend/images/ford-f-150.jpg",
+      price: 30000,
+      name: "Ford F-150",
+    },
+    {
+      id: 28,
+      image: "https://neal.fun/spend/images/tesla.jpg",
+      price: 75000,
+      name: "Tesla",
+    },
+    {
+      id: 29,
+      image: "https://neal.fun/spend/images/monster-truck.jpg",
+      price: 150000,
+      name: "Monster Truck",
+    },
+    {
+      id: 30,
+      image: "https://neal.fun/spend/images/ferrari.jpg",
+      price: 250000,
+      name: "Ferrari",
+    },
+    {
+      id: 31,
+      image: "https://neal.fun/spend/images/single-family-home.jpg",
+      price: 300000,
+      name: "Single Family Home",
+    },
+    {
+      id: 32,
+      image: "https://neal.fun/spend/images/gold-bar.jpg",
+      price: 700000,
+      name: "Gold Bar",
+    },
+    {
+      id: 33,
+      image: "https://neal.fun/spend/images/mcdonalds-franchise.jpg",
+      price: 1500000,
+      name: "McDonalds Franchise",
+    },
+    {
+      id: 34,
+      image: "https://neal.fun/spend/images/superbowl-ad.jpg",
+      price: 5250000,
+      name: "Superbowl Ad",
+    },
+    {
+      id: 35,
+      image: "https://neal.fun/spend/images/yacht.jpg",
+      price: 7500000,
+      name: "Yacht",
+    },
+    {
+      id: 36,
+      image: "https://neal.fun/spend/images/m1-abrams.jpg",
+      price: 8000000,
+      name: "M1 Abrams",
+    },
+    {
+      id: 37,
+      image: "https://neal.fun/spend/images/formula-1-car.jpg",
+      price: 15000000,
+      name: "Formula 1 Car",
+    },
+    {
+      id: 38,
+      image: "https://neal.fun/spend/images/apache-helicopter.jpg",
+      price: 31000000,
+      name: "Apache Helicopter",
+    },
+    {
+      id: 39,
+      image: "https://neal.fun/spend/images/mansion.jpg",
+      price: 45000000,
+      name: "Mansion",
+    },
+    {
+      id: 40,
+      image: "https://neal.fun/spend/images/make-a-movie.jpg",
+      price: 100000000,
+      name: "Make a Movie",
+    },
+    {
+      id: 41,
+      image: "https://neal.fun/spend/images/boeing-747.jpg",
+      price: 148000000,
+      name: "Boeing 747",
+    },
+    {
+      id: 42,
+      image: "https://neal.fun/spend/images/mona-lisa.jpg",
+      price: 780000000,
+      name: "Mona Lisa",
+    },
+    {
+      id: 43,
+      image: "https://neal.fun/spend/images/skyscraper.jpg",
+      price: 850000000,
+      name: "Skyscraper",
+    },
+    {
+      id: 44,
+      image: "https://neal.fun/spend/images/cruise-ship.jpg",
+      price: 930000000,
+      name: "Cruise Ship",
+    },
+    {
+      id: 45,
+      image: "https://neal.fun/spend/images/nba-team.jpg",
+      price: 2120000000,
+      name: "NBA Team",
+    },
+  ];
+  localStorage.setItem("products", JSON.stringify(products));
+  let tempProducts = [...products];
+  localStorage.setItem("tempProducts", JSON.stringify(tempProducts));
+} else {
+  products = JSON.parse(localStorage.getItem("products"));
+  tempProducts = JSON.parse(localStorage.getItem("tempProducts"));
+}
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
 const balance = 100000000000;
 let total = 0;
 searhInput.addEventListener("input", () => {
@@ -318,6 +325,7 @@ const buyProduct = (id) => {
       count: 1,
     });
   }
+  localStorage.setItem("basket", JSON.stringify(basket));
   showProducts();
   console.log(basket);
 };
@@ -330,8 +338,9 @@ const sellProduct = (id) => {
   if (!existingProduct.count) {
     basket = basket.filter((a) => a.id !== id);
   }
-  console.log(basket);
+  localStorage.setItem("basket", JSON.stringify(basket));
   showProducts();
+  console.log(basket);
 };
 
 const showExpenses = () => {
@@ -370,6 +379,7 @@ const showExpenses = () => {
 const showProducts = () => {
   calculateTotal();
   items.textContent = "";
+  products = JSON.parse(localStorage.getItem("products"));
   products.forEach((product, key) => {
     const productInBasket = basket.find((a) => a.id === product.id);
     const item = document.createElement("div");
@@ -420,6 +430,8 @@ const showProducts = () => {
       products = products.filter((a) => a.id !== product.id);
       tempProducts = tempProducts.filter((a) => a.id !== product.id);
       basket = basket.filter((a) => a.id !== product.id);
+      localStorage.setItem("products", JSON.stringify(products));
+      localStorage.setItem("tempProducts", JSON.stringify(tempProducts));
       showProducts();
     });
 
